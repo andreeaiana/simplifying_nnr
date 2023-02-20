@@ -11,7 +11,7 @@
 
 ## Description
 
-This is the code accompanying the paper "Design Choices in Content-Based News Recommendation: On User Modeling and Training Objectives" 
+This is the code accompanying the paper "Simplifying Content-Based News Recommendation: On User Modeling and Training Objectives" 
 
 ## Project Structure
 
