@@ -71,7 +71,7 @@ git clone git@github.com:andreeaiana/nrs_design_choices.git
 cd nrs_design_choices
 
 # [OPTIONAL] create conda environment
-conda create -n myenv python=3.9
+conda create -n nrs_design_choices_env python=3.9
 conda activate nrs_design_choices_env
 
 # install pytorch according to instructions
