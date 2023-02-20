@@ -1,0 +1,29 @@
+_target_: src.models.caum.caum_module.CAUMModule
+
+# training strategy
+supcon_loss: False
+late_fusion: False
+temperature: 0.1
+
+# news encoder 
+pretrained_word_embeddings_path: ${paths.data_dir}MIND${datamodule.size}_train/pretrained_word_embeddings.npy
+pretrained_entity_embeddings_path: ${paths.data_dir}MIND${datamodule.size}_train/pretrained_entity_embeddings.npy
+word_embedding_dim: ${datamodule.word_embedding_dim}
+entity_embedding_dim: ${datamodule.entity_embedding_dim}
+category_embedding_dim: 100
+news_vector_dim: 400
+num_categories: 304
+num_attention_heads: 20
+query_vector_dim: 200
+dropout_probability: 0.2
+
+# user encoder
+num_filters: 400
+dense_att_hidden_dim1: 400
+dense_att_hidden_dim2: 256
+user_vector_dim: 400
+
+optimizer:
+  _target_: torch.optim.Adam
+  _partial_: true
+  lr: 0.0001

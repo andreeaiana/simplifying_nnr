@@ -1,0 +1,24 @@
+_target_: src.models.npa.npa_module.NPAModule
+
+# training strategy
+supcon_loss: False
+late_fusion: False
+temperature: 0.1
+
+# news encoder
+pretrained_word_embeddings_path: ${paths.data_dir}MIND${datamodule.size}_train/pretrained_word_embeddings.npy
+word_embedding_dim: ${datamodule.word_embedding_dim}
+num_filters: 400
+window_size: 3
+word_pref_query_dim: 200
+dropout_probability: 0.2
+
+# user encoder 
+num_users: 643372
+user_embedding_dim: 50
+news_pref_query_dim: 200
+
+optimizer:
+  _target_: torch.optim.Adam
+  _partial_: true
+  lr: 0.0001

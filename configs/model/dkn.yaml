@@ -1,0 +1,23 @@
+_target_: src.models.dkn.dkn_module.DKNModule
+
+# training strategy
+supcon_loss: False
+late_fusion: False
+temperature: 0.1
+
+# news encoder
+pretrained_word_embeddings_path: ${paths.data_dir}MIND${datamodule.size}_train/pretrained_word_embeddings.npy
+pretrained_entity_embeddings_path: ${paths.data_dir}MIND${datamodule.size}_train/pretrained_entity_embeddings.npy
+word_embedding_dim: ${datamodule.word_embedding_dim}
+entity_embedding_dim: ${datamodule.entity_embedding_dim}
+num_filters: 100
+window_sizes: [1, 2, 3, 4]
+use_context: True
+
+# user encoder
+hidden_dim_dnn: 16
+
+optimizer:
+  _target_: torch.optim.Adam
+  _partial_: true
+  lr: 0.0001

@@ -1,0 +1,22 @@
+_target_: src.models.naml.naml_module.NAMLModule
+
+# training strategy
+supcon_loss: False
+late_fusion: False
+temperature: 0.1
+
+# news encoder 
+dataset_attributes: ['title', 'abstract', 'category', 'subcategory']
+pretrained_word_embeddings_path: ${paths.data_dir}MIND${datamodule.size}_train/pretrained_word_embeddings.npy
+word_embedding_dim: ${datamodule.word_embedding_dim}
+category_embedding_dim: 100
+num_categories: 304
+num_filters: 400
+window_size: 3
+query_vector_dim: 200
+dropout_probability: 0.2
+
+optimizer:
+  _target_: torch.optim.Adam
+  _partial_: true
+  lr: 0.0001

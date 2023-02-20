@@ -1,0 +1,18 @@
+_target_: src.models.nrms.nrms_module.NRMSModule
+
+# training strategy
+supcon_loss: False
+late_fusion: False
+temperature: 0.1
+
+# news encoder 
+pretrained_word_embeddings_path: ${paths.data_dir}MIND${datamodule.size}_train/pretrained_word_embeddings.npy
+word_embedding_dim: ${datamodule.word_embedding_dim}
+num_attention_heads: 15
+query_vector_dim: 200
+dropout_probability: 0.2
+
+optimizer:
+  _target_: torch.optim.Adam
+  _partial_: true
+  lr: 0.0001

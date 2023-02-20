@@ -1,0 +1,34 @@
+# @package _global_
+
+# to execute this experiment run:
+# python train.py experiment=example
+
+defaults:
+  - override /datamodule: mind.yaml
+  - override /model: lstur.yaml
+  - override /callbacks: default.yaml
+  - override /logger: many_loggers.yaml
+  - override /trainer: gpu.yaml
+
+# all parameters below will be merged with parameters from default configurations set above
+# this allows you to overwrite only specified parameters
+
+tags: ["lstur", "large", "celoss", "lf"]
+
+seed: 42
+
+datamodule:
+  size: "large"
+
+model:
+  supcon_loss: False
+  late_fusion: True
+  dataset_attributes: ['title', 'category', 'subcategory']
+  num_categories: 304
+  num_users: 643372
+
+logger:
+  wandb:
+    name: "lstur_large_celoss_lf_tsc_s42"
+    tags: ${tags}
+    group: "large"

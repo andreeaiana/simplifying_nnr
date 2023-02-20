@@ -1,0 +1,20 @@
+# @package _global_
+
+defaults:
+  - _self_
+  - datamodule: mind.yaml # choose datamodule with `test_dataloader()` for evaluation
+  - model: null
+  - callbacks: default.yaml
+  - logger: many_loggers.yaml
+  - trainer: default.yaml
+  - paths: default.yaml
+  - extras: default.yaml
+  - hydra: default.yaml
+  - experiment: null
+
+task_name: "eval"
+
+tags: ["eval"]
+
+# passing checkpoint path is necessary for evaluation
+ckpt_path: ???

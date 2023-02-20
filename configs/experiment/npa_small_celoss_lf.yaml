@@ -1,0 +1,36 @@
+# @package _global_
+
+# to execute this experiment run:
+# python train.py experiment=example
+
+defaults:
+  - override /datamodule: mind.yaml
+  - override /model: npa.yaml
+  - override /callbacks: default.yaml
+  - override /logger: many_loggers.yaml
+  - override /trainer: gpu.yaml
+
+# all parameters below will be merged with parameters from default configurations set above
+# this allows you to overwrite only specified parameters
+
+tags: ["npa", "small", "celoss", "lf"]
+
+seed: 42
+
+datamodule:
+  size: "small"
+  num_workers: 8
+
+model:
+  supcon_loss: False
+  late_fusion: True
+  num_users: 45215
+
+trainer:
+  max_epochs: 25
+  
+logger:
+  wandb:
+    name: "npa_small_celoss_lf_s42"
+    tags: ${tags}
+    group: "small"

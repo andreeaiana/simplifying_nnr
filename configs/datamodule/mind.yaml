@@ -1,0 +1,54 @@
+_target_: src.datamodules.mind_datamodule.MINDDataModule
+
+# Dataset type
+size: "large" # choose from: large, small, demo
+
+# URLs for downloading the dataset
+mind_urls:
+  large: 
+    train: "https://mind201910small.blob.core.windows.net/release/MINDlarge_train.zip"
+    dev:  "https://mind201910small.blob.core.windows.net/release/MINDlarge_dev.zip"
+  small:
+    train: "https://mind201910small.blob.core.windows.net/release/MINDsmall_train.zip"
+    dev:  "https://mind201910small.blob.core.windows.net/release/MINDsmall_dev.zip"
+  demo:
+    train:  "https://recodatasets.z20.web.core.windows.net/newsrec/MINDdemo_train.zip"
+    dev: "https://recodatasets.z20.web.core.windows.net/newsrec/MINDdemo_dev.zip"
+
+word_embeddings_url:
+  "https://nlp.stanford.edu/data/glove.840B.300d.zip"
+
+# File names and paths
+data_dir: ${paths.data_dir}
+word_embeddings_dirname: glove
+word_embeddings_fpath: ${paths.data_dir}/glove/glove.840B.300d.txt
+entity_embeddings_filename: 'entity_embedding.vec'
+
+id2index_filenames:
+  uid2index: 'uid2index.tsv'
+  categ2index: 'categ2index.tsv'
+  subcateg2index: 'subcateg2index.tsv'
+  word2index: 'word2index.tsv'
+  word2index_all: 'word2index_all.tsv'
+  entity2index: 'entity2index.tsv'
+  entity2index_all: 'entity2index_all.tsv'
+
+# Data preprocessing
+dataset_attributes: ['title']
+
+word_embedding_dim: 300
+entity_embedding_dim: 100
+entity_freq_threshold: 2
+entity_confidence_threshold: 0.5
+
+neg_sampling_ratio: 4
+
+max_title_length: 30
+max_abstract_length: 50
+max_history_length: 50
+
+# Datamodule parameters
+batch_size: 512
+num_workers: 0
+pin_memory: True
+drop_last: False 
