@@ -67,12 +67,12 @@ Install dependencies
 
 ```bash
 # clone project
-git clone git@github.com:andreeaiana/nrs_design_choices.git
-cd nrs_design_choices
+git clone git@github.com:andreeaiana/simplifying_nnr.git
+cd simplifying_nnr
 
 # [OPTIONAL] create conda environment
-conda create -n nrs_design_choices_env python=3.9
-conda activate nrs_design_choices_env
+conda create -n simplifying_nnr_env python=3.9
+conda activate simplifying_nnr_env
 
 # install pytorch according to instructions
 # https://pytorch.org/get-started/
