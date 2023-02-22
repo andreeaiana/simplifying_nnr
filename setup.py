@@ -8,7 +8,7 @@ setup(
     description="",
     author="",
     author_email="",
-    url="https://github.com/andreeaiana/nrs_design_choices",  
+    url="",  
     install_requires=["pytorch-lightning", "hydra-core"],
     packages=find_packages(),
 )
