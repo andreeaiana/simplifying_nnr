@@ -101,13 +101,13 @@ You can override any parameter from command line like this
 python src/train.py trainer.max_epochs=20 datamodule.batch_size=64
 ```
 
-<!-- ## Citation
+## Citation
 
 ```bibtex
-@inproceedings{iana2023,
-  author = {Andreea Iana and Goran Glavaš and Heiko Paulheim},
-  title = {Simplifying Content-Based Neural News Recommendation: On User Modeling and Training Objectives},
-  journal={arXiv preprint arXiv:},
-  year = {2023}
+@article{iana2023simplifying,
+    title={Simplifying Content-Based Neural News Recommendation: On User Modeling and Training Objectives},
+    author={Andreea Iana and Goran Glavaš and Heiko Paulheim},
+    journal={arXiv preprint arXiv:2304.03112},
+    year={2023}
 }
-``` -->
+```
