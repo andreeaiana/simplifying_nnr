@@ -51,13 +51,17 @@ The directory structure of the project looks like this:
 │   ├── eval.py                  <- Run evaluation
 │   └── train.py                 <- Run training
 │
-├── .env.example              <- Example of file for storing private environment variables
 ├── .gitignore                <- List of files ignored by git
-├── .pre-commit-config.yaml   <- Configuration of pre-commit hooks for code formatting
 ├── requirements.txt          <- File for installing python dependencies
 ├── setup.py                  <- File for installing project as a package
 └── README.md
 ```
+
+## Data
+We use the [MIND](https://msnews.github.io/) dataset in all experiments. <br>
+The datasets are automatially downloaded, cached, and pre-processed when running the [train.py](src/train.py) pipeline. <br>
+Alternatively, the datasets can be manually downloaded into the [data](data/) directory using the URLs from the [MIND data config](configs/datamodule/mind.yaml).
+
 
 ## How to run
 
@@ -79,20 +83,14 @@ conda activate simplifying_nnr_env
 pip install -r requirements.txt
 ```
 
-Train model with default configuration
-
-```bash
-# train on CPU
-python src/train.py trainer=cpu
-
-# train on GPU
-python src/train.py trainer=gpu
-```
-
 Train model with chosen experiment configuration from [configs/experiment/](configs/experiment/)
 
 ```bash
-python src/train.py experiment=experiment_name.yaml
+# train on CPU
+python src/train.py experiment=experiment_name.yaml trainer=cpu
+
+# train on GPU
+python src/train.py experiment=experiment_name.yaml trainer=gpu
 ```
 
 You can override any parameter from command line like this
