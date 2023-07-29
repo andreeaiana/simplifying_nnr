@@ -105,7 +105,8 @@ python src/train.py trainer.max_epochs=20 datamodule.batch_size=64
 @article{iana2023simplifying,
     title={Simplifying Content-Based Neural News Recommendation: On User Modeling and Training Objectives},
     author={Andreea Iana and Goran Glavaš and Heiko Paulheim},
-    journal={arXiv preprint arXiv:2304.03112},
+    booktitle={Proceedings of the 46th International ACM SIGIR Conference on Research and Development in Information Retrieval},
+    pages={2384--2388},
     year={2023}
 }
 ```
