@@ -13,7 +13,7 @@
 
 ## Description
 
-This is the code accompanying the paper [Simplifying Content-Based Neural News Recommendation: On User Modeling and Training Objectives](https://arxiv.org/abs/2304.03112) in which we propose a unified framework allowing for a systematic and fair comparison of news recommenders across three crucial design dimensions: (i) candidate-awareness in user modeling, (ii) click behavior fusion, and (iii) training objectives. 
+This is the code accompanying the paper [Simplifying Content-Based Neural News Recommendation: On User Modeling and Training Objectives]([https://arxiv.org/abs/2304.03112](https://dl.acm.org/doi/abs/10.1145/3539618.3592062)) in which we propose a unified framework allowing for a systematic and fair comparison of news recommenders across three crucial design dimensions: (i) candidate-awareness in user modeling, (ii) click behavior fusion, and (iii) training objectives. 
 
 ![](./framework.png)
 
